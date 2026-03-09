@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For You Elina ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+color:white;
+text-align:center;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffc3a0);
+overflow:hidden;
+}
+
+.container{
+max-width:750px;
+padding:40px;
+animation:fade 1.5s;
+}
+
+h1{
+font-size:38px;
+}
+
+p{
+font-size:20px;
+line-height:1.8;
+}
+
+button{
+padding:12px 28px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4d79;
+cursor:pointer;
+margin-top:20px;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(15px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+.heart{
+position:absolute;
+color:white;
+font-size:18px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container" id="scene">
+
+<h1>For You, Elina ❤️</h1>
+
+<p>I made something small for you.</p>
+<p>Just click slowly and read.</p>
+
+<button onclick="s1()">Start</button>
+
+</div>
+
+<script>
+
+function s1(){
+document.getElementById("scene").innerHTML = `
+<h1>Hey Elina 🌸</h1>
+<p>Sometimes people meet normally...</p>
+<p>But sometimes someone appears and everything feels different.</p>
+<button onclick="s2()">Continue</button>
+`;
+}
+
+function s2(){
+document.getElementById("scene").innerHTML = `
+<h1>Something I Want To Say</h1>
+<p>Before you read this...</p>
+<p>Just know I meant every word.</p>
+<button onclick="s3()">Open Message</button>
+`;
+}
+
+function s3(){
+document.getElementById("scene").innerHTML = `
+<h1>This Is All About You ❤️</h1>
+
+<p style="text-align:left;font-size:19px;">
+
+Yrrrr elina honestly I’ve met a lot of people before and talked to many, but none of them ever made me feel the way you do. with most people it’s just normal conversation, it comes and goes… but with you it’s different and somehow you became important to me without even trying umm... the way you talk, the way you laugh, the way you send your pictures and then act like it’s nothing while my heart is literally struggling to stay calm 😭 u seriously made me blush,melt and get shocked at the same time ahemmm...and honestly u can't just send pictures like that and expect me to act normal yrrr....that should come with a warning bc my heart clearly forgets how to behave every time u do that😶and um seriously though.... if u keep sending pics like that my heart might actually file a complaint against u 😭🫠 it just hits different ahemmmm..... sometimes I catch myself smiling at my phone like an idiot when we’re talking and I realize it’s bc of you and the funny part is I didn’t even notice when it happened, you just slowly became the person I look forward to the most every day and I swear there’s something about you that makes you impossible to replace, bc I’ve met many people before but none of them ever felt like you do and honestly I really appreciate u a lot. ngl but I'm pretty sure if u were in front of me I'd probably forget what I was Abt to say and just look at u for a moment...bc u really have that kind of effect on me 🫠
+
+</p>
+`;
+}
+
+function hearts(){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(10+Math.random()*20)+"px";
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove();},6000);
+}
+
+setInterval(hearts,500);
+
+</script>
+
+</body>
+</html>
